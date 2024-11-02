@@ -6,6 +6,10 @@ concurrency:
   group: container-release
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -25,12 +29,12 @@ on:
 jobs:
   simple-checks:
     name: Simple Checks
-    uses: onedr0p/containers/.github/workflows/simple-checks.yaml@main
+    uses: bgotink/macharian-containers/.github/workflows/simple-checks.yaml@main
 
   build-images:
     name: Build Images
     needs: simple-checks
-    uses: onedr0p/containers/.github/workflows/build-images.yaml@main
+    uses: bgotink/macharian-containers/.github/workflows/build-images.yaml@main
     secrets: inherit
     permissions:
       contents: read
