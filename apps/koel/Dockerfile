@@ -60,7 +60,7 @@ RUN \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /var/www/html/storage/search-indexes \
-    && chmod 777 /var/www/html/storage/search-indexes \
+    && chmod 777 /var/www/html/storage /var/www/html/storage/search-indexes \
     # Set locale to prevent removal of non-ASCII path characters when transcoding with ffmpeg
     # See https://github.com/koel/docker/pull/91
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
