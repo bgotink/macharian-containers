@@ -35,15 +35,15 @@ file:
     filetype: file
   /var/www/html/storage/framework/cache:
     exists: true
-    mode: "0755"
+    mode: "0777"
     filetype: directory
   /var/www/html/storage/framework/sessions:
     exists: true
-    mode: "0755"
+    mode: "0777"
     filetype: directory
   /var/www/html/storage/framework/views:
     exists: true
-    mode: "0755"
+    mode: "0777"
     filetype: directory
   /var/www/html/storage/search-indexes:
     exists: true
