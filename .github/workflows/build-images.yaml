@@ -33,6 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrices: ${{ steps.prepare-matrices.outputs.matrices }}
+    permissions:
+      contents: read
+      packages: read
     steps:
       - name: Lowercase repository owner
         shell: bash
@@ -54,7 +57,7 @@ jobs:
       - name: Prepare Matrices
         id: prepare-matrices
         env:
-          TOKEN: ${{ steps.app-token.outputs.token }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
           if [[ -z "${{ inputs.appsToBuild }}" ]]; then
